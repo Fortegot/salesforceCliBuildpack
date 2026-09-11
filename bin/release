@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cat <<EOF
+---
+config_vars:
+  SF_CLI_VERSION:
+default_process_types:
+  web: java -jar target/*.jar
+EOF

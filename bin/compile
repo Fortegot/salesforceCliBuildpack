@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -e
+
+BUILD_DIR="$1"
+CACHE_DIR="$2"
+
+SF_VERSION="${SF_CLI_VERSION:-2.147.0}"
+
+SF_DIR="$BUILD_DIR/vendor/sf"
+
+echo "-----> Installing Salesforce CLI ${SF_VERSION}"
+
+mkdir -p "$SF_DIR"
+
+URL="https://github.com/salesforcecli/cli/releases/download/${SF_VERSION}/sf-v${SF_VERSION}-linux-x64.tar.gz"
+
+echo "       Downloading ${URL}"
+
+curl --fail --silent --show-error --location \
+    "$URL" \
+    --output "$CACHE_DIR/sf.tar.gz"
+
+echo "       Extracting Salesforce CLI"
+
+tar -xzf "$CACHE_DIR/sf.tar.gz" \
+    -C "$SF_DIR" \
+    --strip-components=1
+
+echo "       Salesforce CLI installed"
+
+
+"$SF_DIR/bin/sf" version
