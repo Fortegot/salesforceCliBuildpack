@@ -13,7 +13,8 @@ echo "-----> Installing Salesforce CLI ${SF_VERSION}"
 
 mkdir -p "$SF_DIR"
 
-URL="https://github.com/salesforcecli/cli/releases/download/${SF_VERSION}/sf-v${SF_VERSION}-linux-x64.tar.gz"
+#URL="https://github.com/salesforcecli/cli/releases/download/${SF_VERSION}/sf-v${SF_VERSION}-linux-x64.tar.gz"
+URL="https://github.com/salesforcecli/cli/releases/download/2.152.2/sf-v2.152.2-3a0d018-linux-x64.tar.gz"
 
 echo "       Downloading ${URL}"
 
