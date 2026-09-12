@@ -1,0 +1,4 @@
+*.sh text eol=lf
+detect text eol=lf
+compile text eol=lf
+release text eol=lf
