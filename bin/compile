@@ -30,5 +30,16 @@ tar -xzf "$CACHE_DIR/sf.tar.gz" \
 
 echo "       Salesforce CLI installed"
 
-
 "$SF_DIR/bin/sf" version
+
+echo "       Configuring Salesforce CLI PATH"
+
+PROFILE_DIR="$BUILD_DIR/.profile.d"
+
+mkdir -p "$PROFILE_DIR"
+
+cat > "$PROFILE_DIR/sf.sh" <<'EOF'
+export PATH="/app/vendor/sf/bin:$PATH"
+EOF
+
+chmod +x "$PROFILE_DIR/sf.sh"

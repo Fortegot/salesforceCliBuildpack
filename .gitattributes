@@ -2,3 +2,7 @@
 detect text eol=lf
 compile text eol=lf
 release text eol=lf
+* text=auto
+*.sh text eol=lf
+bin/* text eol=lf
+.profile.d/* text eol=lf
